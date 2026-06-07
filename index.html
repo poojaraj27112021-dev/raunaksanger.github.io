@@ -7,14 +7,12 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
         :root {
-            --bg-gradient-start: #e0f2fe; /* Light, premium slate-blue base */
-            --bg-gradient-end: #f0fdf4; /* Soft hint of cinematic green-blue */
-            --surface-panel: rgba(255, 255, 255, 0.85); /* Frosty glass effect */
-            --surface-card: #ffffff;
-            --accent-blue: #0284c7; /* Vibrant creative blue */
-            --accent-dark-blue: #0369a1;
-            --text-main: #0f172a; /* Deep slate for readability */
-            --text-muted: #475569;
+            --bg-soothing: #222831; /* Premium matte slate gray */
+            --bg-secondary: #393e46; /* Soothing soft gray pane */
+            --surface-card: #2c323c; /* Comfortable card background */
+            --accent-gold: #ffd369; /* Eye-soothing warm cinematic gold */
+            --text-bright: #eeeeee;
+            --text-soothing: #b2bec3; /* Muted gray for easy reading */
         }
 
         * {
@@ -26,22 +24,18 @@
         }
 
         body {
-            background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
-            background-attachment: fixed;
-            color: var(--text-main);
+            background-color: var(--bg-soothing);
+            color: var(--text-bright);
             line-height: 1.6;
         }
 
-        /* Upgraded Floating Header */
+        /* Banner Design */
         header {
-            background: linear-gradient(rgba(2, 132, 199, 0.9), rgba(3, 105, 161, 0.95)), 
+            background: linear-gradient(rgba(34, 40, 49, 0.85), var(--bg-soothing)), 
                         url('https://images.unsplash.com/photo-1492446845049-9c50cc313f00?q=80&w=1200') no-repeat center center/cover;
-            padding: 60px 20px;
+            padding: 70px 20px;
             text-align: center;
-            color: #ffffff;
-            border-bottom-left-radius: 24px;
-            border-bottom-right-radius: 24px;
-            box-shadow: 0 10px 30px rgba(2, 132, 199, 0.15);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .avatar-container {
@@ -51,33 +45,28 @@
         }
 
         .avatar-img {
-            width: 160px;
-            height: 160px;
+            width: 170px;
+            height: 170px;
             border-radius: 50%;
-            border: 4px solid #ffffff;
+            border: 4px solid var(--accent-gold);
             object-fit: cover;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            transition: transform 0.4s ease;
-        }
-
-        .avatar-container:hover .avatar-img {
-            transform: scale(1.05) rotate(2deg);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
         }
 
         h1 {
             font-size: 3rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
             margin-bottom: 8px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.15);
+            color: var(--text-bright);
         }
 
         .role-tag {
-            font-size: 1.2rem;
-            color: #e0f2fe;
+            font-size: 1.25rem;
+            color: var(--accent-gold);
             font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             margin-bottom: 25px;
         }
 
@@ -89,75 +78,26 @@
         }
 
         .contact-btn {
-            color: var(--text-main);
+            color: var(--text-bright);
             text-decoration: none;
             font-size: 0.95rem;
-            padding: 10px 24px;
-            background: #ffffff;
-            font-weight: 600;
-            border-radius: 30px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
+            padding: 10px 22px;
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 25px;
+            transition: all 0.3s;
         }
 
         .contact-btn:hover {
-            background: var(--bg-gradient-start);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.15);
-        }
-
-        /* Interactive Showcase Console */
-        .interactive-console {
-            background: var(--surface-panel);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255,255,255,0.6);
-            border-radius: 16px;
-            padding: 25px;
-            margin: -30px auto 40px auto;
-            max-width: 900px;
-            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
-            position: relative;
-            z-index: 10;
-        }
-
-        .console-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 15px;
-            border-bottom: 1px solid rgba(0,0,0,0.08);
-            padding-bottom: 10px;
-        }
-
-        .status-light {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            color: var(--accent-dark-blue);
-            text-transform: uppercase;
-        }
-
-        .pulse-dot {
-            width: 10px;
-            height: 10px;
-            background-color: #10b981;
-            border-radius: 50%;
-            animation: pulse 1.8s infinite;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7); }
-            70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
-            100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+            border-color: var(--accent-gold);
+            background: rgba(255, 211, 105, 0.1);
+            transform: translateY(-2px);
         }
 
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
 
         section {
@@ -166,88 +106,69 @@
 
         .section-heading {
             font-size: 1.8rem;
-            color: var(--text-main);
-            padding-bottom: 8px;
+            color: var(--text-bright);
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 10px;
             margin-bottom: 30px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            position: relative;
-        }
-
-        .section-heading::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: var(--accent-blue);
-            border-radius: 2px;
+            gap: 10px;
         }
 
         .section-heading i {
-            color: var(--accent-blue);
+            color: var(--accent-gold);
         }
 
-        /* Modern Graphic Grid Card Overhaul */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
+            gap: 25px;
         }
 
         .portfolio-card {
             background-color: var(--surface-card);
-            border-radius: 16px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.05);
-            transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, border-color 0.3s ease;
             display: flex;
             flex-direction: column;
-            border: 1px solid rgba(0, 0, 0, 0.03);
         }
 
         .portfolio-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(2, 132, 199, 0.12);
-            border-color: rgba(2, 132, 199, 0.2);
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
         }
 
         .card-cover-wrap {
             position: relative;
-            height: 200px;
-            overflow: hidden;
-            background: #000;
+            height: 190px;
+            background: #1a1e24;
         }
 
         .card-cover {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .portfolio-card:hover .card-cover {
-            transform: scale(1.06);
+            opacity: 0.75;
         }
 
         .ribbon {
             position: absolute;
-            top: 14px;
-            right: 14px;
-            background: var(--accent-blue);
-            color: #ffffff;
-            padding: 4px 14px;
+            top: 12px;
+            right: 12px;
+            background: var(--accent-gold);
+            color: #222831;
+            padding: 4px 12px;
             font-size: 0.75rem;
             font-weight: 700;
-            border-radius: 20px;
+            border-radius: 4px;
             text-transform: uppercase;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
 
         .card-body {
-            padding: 24px;
+            padding: 22px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
@@ -255,64 +176,56 @@
 
         .card-tag {
             font-size: 0.8rem;
-            color: var(--accent-blue);
+            color: var(--accent-gold);
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
         }
 
         .card-title {
-            font-size: 1.35rem;
-            margin-bottom: 12px;
-            font-weight: 700;
-            color: var(--text-main);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .card-text {
-            color: var(--text-muted);
+            color: var(--text-soothing);
             font-size: 0.95rem;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
         }
 
         .action-link {
             margin-top: auto;
             text-align: center;
-            background: #f0f9ff;
-            color: var(--accent-blue);
+            background: var(--bg-secondary);
+            color: var(--text-bright);
             text-decoration: none;
             padding: 12px;
-            border-radius: 10px;
-            font-weight: 700;
+            border-radius: 8px;
+            font-weight: 600;
             font-size: 0.9rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(2, 132, 199, 0.1);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
         }
 
         .action-link:hover {
-            background: var(--accent-blue);
-            color: #ffffff;
-            box-shadow: 0 4px 15px rgba(2, 132, 199, 0.25);
+            background: var(--accent-gold);
+            color: #222831;
+            box-shadow: 0 4px 12px rgba(255, 211, 105, 0.3);
         }
 
-        /* Modernized Timeline Layout */
         .experience-stack {
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 20px;
         }
 
         .experience-node {
             background: var(--surface-card);
-            padding: 28px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
-            border-left: 5px solid var(--accent-blue);
-            transition: transform 0.25s ease;
-        }
-
-        .experience-node:hover {
-            transform: translateX(5px);
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent-gold);
         }
 
         .node-top {
@@ -320,42 +233,37 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             gap: 10px;
         }
 
         .node-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--text-main);
+            font-size: 1.2rem;
+            font-weight: 600;
         }
 
         .node-date {
             font-size: 0.85rem;
-            color: var(--accent-dark-blue);
-            background: #e0f2fe;
-            padding: 4px 14px;
-            border-radius: 20px;
-            font-weight: 700;
+            color: var(--accent-gold);
+            background: rgba(255, 211, 105, 0.1);
+            padding: 3px 10px;
+            border-radius: 4px;
+            font-weight: 600;
         }
 
         .edu-item {
             background: var(--surface-card);
-            padding: 26px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04);
-            border: 1px solid rgba(0,0,0,0.02);
+            padding: 22px;
+            border-radius: 10px;
         }
 
         footer {
             text-align: center;
             padding: 40px;
-            color: #ffffff;
-            background: var(--text-main);
+            color: var(--text-soothing);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--bg-secondary);
             font-size: 0.9rem;
-            border-top-left-radius: 20px;
-            border-top-right-radius: 20px;
-            margin-top: 40px;
         }
     </style>
 </head>
@@ -363,33 +271,18 @@
 
     <header>
         <div class="avatar-container">
-            <!-- Referencing your verified picture file name precisely -->
+            <!-- Linked directly to your internal repository file Raunak.jpeg -->
             <img src="Raunak.jpeg" alt="Raunak Sanger Profile Picture" class="avatar-img">
         </div>
         <h1>Raunak Sanger</h1>
         <div class="role-tag">Writer & Director</div>
         <div class="contact-flex">
-            <a href="mailto:raunaksanger1999@gmail.com" class="contact-btn"><i class="fas fa-envelope" style="color:var(--accent-blue);"></i> raunaksanger1999@gmail.com</a>
-            <a href="tel:+917007272067" class="contact-btn"><i class="fas fa-phone" style="color:var(--accent-blue);"></i> +91 7007272067</a>
+            <a href="mailto:raunaksanger1999@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i> raunaksanger1999@gmail.com</a>
+            <a href="tel:+917007272067" class="contact-btn"><i class="fas fa-phone"></i> +91 7007272067</a>
         </div>
     </header>
 
     <div class="container">
-
-        <!-- Interactive Graphical Module Block -->
-        <div class="interactive-console">
-            <div class="console-header">
-                <span class="status-light"><div class="pulse-dot"></div> Director's Showreel Engine Active</span>
-                <i class="fas fa-sliders-h" style="color: var(--accent-blue);"></i>
-            </div>
-            <p style="font-size:0.95rem; color: var(--text-muted); margin-bottom:15px;">
-                Welcome to the digital production layout monitor. Select any project container below to link with external premium broadcast mirrors[cite: 1].
-            </p>
-            <div style="background: rgba(0,0,0,0.04); border-radius:8px; padding:12px; display:flex; align-items:center; justify-content:space-between;">
-                <span style="font-size:0.85rem; font-weight:700;"><i class="fas fa-circle" style="color:#ef4444;"></i> Live Monitor Track</span>
-                <span style="font-size:0.8rem; font-family:monospace; color:var(--text-muted);">SYS-MTRX // 2026_v2</span>
-            </div>
-        </div>
 
         <!-- MOVIES PORTFOLIO -->
         <section id="features">
@@ -411,7 +304,7 @@
 
                 <div class="portfolio-card">
                     <div class="card-cover-wrap">
-                        <span class="ribbon" style="background:#64748b; color:#fff;">Post-Production</span>
+                        <span class="ribbon" style="background:#4b5563; color:#fff;">Post-Production</span>
                         <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=500" class="card-cover" alt="Safed Cover">
                     </div>
                     <div class="card-body">
@@ -423,7 +316,7 @@
 
                 <div class="portfolio-card">
                     <div class="card-cover-wrap">
-                        <span class="ribbon" style="background:#64748b; color:#fff;">Post-Production</span>
+                        <span class="ribbon" style="background:#4b5563; color:#fff;">Post-Production</span>
                         <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=500" class="card-cover" alt="Pinecone Cover">
                     </div>
                     <div class="card-body">
@@ -525,9 +418,9 @@
         <section id="education">
             <h2 class="section-heading"><i class="fas fa-graduation-cap"></i> Academic Training</h2>
             <div class="edu-item">
-                <h3 style="font-size: 1.25rem; margin-bottom: 5px; color: var(--text-main);">Bachelor in Cinema (Specialization in Film Direction)</h3>
-                <p style="color: var(--accent-blue); font-weight: 700; font-size: 1rem; margin-bottom: 5px;">State Institute of Film and Television, Rohtak[cite: 1]</p>
-                <p style="color: var(--text-muted); font-size: 0.95rem;">Timeline Portfolio: 2018 - 2024[cite: 1]</p>
+                <h3 style="font-size: 1.25rem; margin-bottom: 5px;">Bachelor in Cinema (Specialization in Film Direction)</h3>
+                <p style="color: var(--accent-gold); font-weight: 600; font-size: 1rem; margin-bottom: 5px;">State Institute of Film and Television, Rohtak[cite: 1]</p>
+                <p style="color: var(--text-soothing); font-size: 0.95rem;">Timeline Portfolio: 2018 - 2024[cite: 1]</p>
             </div>
         </section>
 
