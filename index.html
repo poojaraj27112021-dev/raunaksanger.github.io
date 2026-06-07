@@ -3,476 +3,433 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Raunak Sanger | Writer & Director</title>
+    <title>Raunak Sanger | Writer & Director Portfolio</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
     <style>
         :root {
-            --bg-dark: #080a0f;
-            --surface: #121620;
-            --surface-hover: #1a202c;
-            --accent: #e50914; /* Cinematic Netflix Red */
-            --accent-glow: rgba(229, 9, 20, 0.4);
-            --text-main: #ffffff;
-            --text-muted: #9ca3af;
+            --bg-soothing: #1e222b; /* Soft Matte Charcoal */
+            --bg-secondary: #252b36; /* Soft Slate Gray */
+            --surface-card: #2d3542; /* Eye-soothing card surface */
+            --accent-gold: #e2b755; /* Sophisticated Warm Gold */
+            --text-bright: #ffffff;
+            --text-soothing: #cbd5e1; /* Soft muted gray-blue */
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             scroll-behavior: smooth;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            overflow-x: hidden;
+            background-color: var(--bg-soothing);
+            color: var(--text-bright);
+            line-height: 1.6;
         }
 
-        /* Hero / Spotlight Section */
+        /* Banner Design */
         header {
-            position: relative;
-            min-height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            background: linear-gradient(rgba(30, 34, 43, 0.85), var(--bg-soothing)), 
+                        url('https://images.unsplash.com/photo-1492446845049-9c50cc313f00?q=80&w=1200') no-repeat center center/cover;
+            padding: 70px 20px;
             text-align: center;
-            padding: 40px 20px;
-            background: radial-gradient(circle at center, rgba(18, 22, 32, 0.8) 0%, var(--bg-dark) 100%), 
-                        url('https://images.unsplash.com/photo-1536440136628-849c177e76a1?q=80&w=1925') no-repeat center center/cover;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .profile-container {
+        .avatar-container {
             position: relative;
-            margin-bottom: 25px;
-            animation: fadeIn 1.5s ease-out;
+            display: inline-block;
+            margin-bottom: 20px;
         }
 
-        .profile-img {
+        /* Portrait styling matches the cap profile look from the resume file */
+        .avatar-img {
             width: 160px;
             height: 160px;
             border-radius: 50%;
-            border: 3px solid var(--accent);
-            box-shadow: 0 0 25px var(--accent-glow);
+            border: 4px solid var(--accent-gold);
             object-fit: cover;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+            background-color: #2a2a2a;
         }
 
         h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            letter-spacing: -1px;
-            margin-bottom: 10px;
-            text-transform: uppercase;
-            background: linear-gradient(to right, #ffffff, #a1a1aa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: slideUp 1s ease-out;
+            font-size: 2.8rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            color: var(--text-bright);
         }
 
-        .tagline {
-            font-size: 1.4rem;
-            color: var(--accent);
+        .role-tag {
+            font-size: 1.2rem;
+            color: var(--accent-gold);
             font-weight: 600;
-            letter-spacing: 2px;
             text-transform: uppercase;
+            letter-spacing: 2px;
             margin-bottom: 20px;
         }
 
-        .contact-bar {
+        .contact-flex {
             display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
             justify-content: center;
-            margin-bottom: 30px;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
-        .contact-link {
-            color: var(--text-muted);
+        .contact-btn {
+            color: var(--text-bright);
             text-decoration: none;
-            font-size: 0.95rem;
-            padding: 8px 16px;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            border-radius: 30px;
+            font-size: 0.9rem;
+            padding: 10px 20px;
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 25px;
             transition: all 0.3s;
         }
 
-        .contact-link:hover {
-            color: var(--text-main);
-            border-color: var(--accent);
-            background: rgba(229, 9, 20, 0.1);
+        .contact-btn:hover {
+            border-color: var(--accent-gold);
+            background: rgba(226, 183, 85, 0.1);
             transform: translateY(-2px);
         }
 
-        /* Main Container */
-        .wrapper {
-            max-width: 1200px;
+        .container {
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 60px 20px;
+            padding: 50px 20px;
         }
 
         section {
-            margin-bottom: 80px;
+            margin-bottom: 60px;
         }
 
-        .section-title {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 35px;
+        .section-heading {
+            font-size: 1.8rem;
+            color: var(--text-bright);
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            letter-spacing: -0.5px;
+            gap: 10px;
         }
 
-        .section-title::after {
-            content: '';
-            flex-grow: 1;
-            height: 1px;
-            background: linear-gradient(to right, rgba(255,255,255,0.1), transparent);
+        .section-heading i {
+            color: var(--accent-gold);
         }
 
-        .section-title i {
-            color: var(--accent);
-        }
-
-        /* Cinematic Portfolio Grid */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
         }
 
-        .showcase-card {
-            background: var(--surface);
-            border-radius: 12px;
+        .portfolio-card {
+            background-color: var(--surface-card);
+            border-radius: 10px;
             overflow: hidden;
             border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, border-color 0.3s ease;
             display: flex;
             flex-direction: column;
         }
 
-        .showcase-card:hover {
-            transform: translateY(-8px) scale(1.02);
-            border-color: rgba(229, 9, 20, 0.3);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-gold);
         }
 
-        .card-img-wrapper {
+        .card-cover-wrap {
             position: relative;
-            width: 100%;
-            height: 200px;
-            background: #1f2937;
-            overflow: hidden;
+            height: 180px;
+            background: #252b36;
         }
 
-        .card-img {
+        .card-cover {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            opacity: 0.7;
-            transition: transform 0.5s;
+            opacity: 0.8;
         }
 
-        .showcase-card:hover .card-img {
-            transform: scale(1.08);
-            opacity: 0.9;
-        }
-
-        .badge {
+        .ribbon {
             position: absolute;
-            top: 15px;
-            right: 15px;
-            background: var(--accent);
-            color: white;
-            padding: 4px 12px;
+            top: 12px;
+            right: 12px;
+            background: var(--accent-gold);
+            color: #1e222b;
+            padding: 3px 10px;
             font-size: 0.75rem;
             font-weight: 700;
-            text-transform: uppercase;
             border-radius: 4px;
-            letter-spacing: 0.5px;
+            text-transform: uppercase;
         }
 
-        .card-content {
-            padding: 25px;
+        .card-body {
+            padding: 22px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
         }
 
-        .card-title {
-            font-size: 1.35rem;
+        .card-tag {
+            font-size: 0.8rem;
+            color: var(--accent-gold);
             font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .card-role {
-            font-size: 0.85rem;
-            color: var(--accent);
-            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+            margin-bottom: 6px;
         }
 
-        .card-desc {
-            color: var(--text-muted);
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card-text {
+            color: var(--text-soothing);
             font-size: 0.95rem;
-            line-height: 1.5;
             margin-bottom: 20px;
         }
 
-        .card-btn {
+        .action-link {
             margin-top: auto;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-main);
+            text-align: center;
+            background: var(--bg-secondary);
+            color: var(--text-bright);
             text-decoration: none;
-            padding: 10px 18px;
-            border-radius: 8px;
-            font-size: 0.9rem;
+            padding: 10px;
+            border-radius: 6px;
             font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.1);
             transition: all 0.3s;
         }
 
-        .card-btn:hover {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: white;
-            box-shadow: 0 4px 12px var(--accent-glow);
+        .action-link:hover {
+            background: var(--accent-gold);
+            color: #1e222b;
+            box-shadow: 0 4px 12px rgba(226, 183, 85, 0.3);
         }
 
-        /* Timeline View for Industry Experience */
-        .timeline {
+        /* Timeline block for experience items */
+        .experience-stack {
             display: flex;
             flex-direction: column;
             gap: 20px;
         }
 
-        .timeline-item {
-            background: var(--surface);
+        .experience-node {
+            background: var(--surface-card);
             padding: 25px;
-            border-radius: 12px;
-            border-left: 4px solid var(--accent);
-            transition: background 0.3s;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-gold);
         }
 
-        .timeline-item:hover {
-            background: var(--surface-hover);
-        }
-
-        .timeline-header {
+        .node-top {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
+            align-items: center;
             flex-wrap: wrap;
-            gap: 10px;
             margin-bottom: 10px;
         }
 
-        .company-name {
+        .node-title {
             font-size: 1.2rem;
-            font-weight: 700;
+            font-weight: 600;
         }
 
-        .timeline-date {
+        .node-date {
             font-size: 0.85rem;
-            color: var(--text-muted);
-            background: rgba(255,255,255,0.05);
-            padding: 4px 10px;
-            border-radius: 6px;
+            color: var(--accent-gold);
+            background: rgba(226, 183, 85, 0.1);
+            padding: 2px 10px;
+            border-radius: 4px;
         }
 
-        /* Keyframe Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        .edu-item {
+            background: var(--surface-card);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
         }
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 0; transform: translateY(0); }
-        }
-
-        @media (max-width: 768px) {
-            h1 { font-size: 2.5rem; }
-            .portfolio-grid { grid-template-columns: 1fr; }
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-soothing);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            background: var(--bg-secondary);
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="profile-container">
-            <!-- Replace placeholder below with an uploaded image link -->
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=250" alt="Raunak Sanger" class="profile-img">
+        <div class="avatar-container">
+            <!-- This visual placeholder maps to the circular cap-wearing portrait layout inside the resume document -->
+            <img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?q=80&w=250" alt="Raunak Sanger Picture" class="avatar-img">
         </div>
         <h1>Raunak Sanger</h1>
-        <p class="tagline">Writer & Director</p>
-        <div class="contact-bar">
-            <a href="mailto:raunaksanger1999@gmail.com" class="contact-link"><i class="fas fa-envelope"></i> raunaksanger1999@gmail.com</a>
-            <a href="tel:+917007272067" class="contact-link"><i class="fas fa-phone"></i> +91 7007272067</a>
+        <div class="role-tag">Writer & Director</div>
+        <div class="contact-flex">
+            <a href="mailto:raunaksanger1999@gmail.com" class="contact-btn"><i class="fas fa-envelope"></i> raunaksanger1999@gmail.com</a>
+            <a href="tel:+917007272067" class="contact-btn"><i class="fas fa-phone"></i> +91 7007272067</a>
         </div>
     </header>
 
-    <div class="wrapper">
+    <div class="container">
 
-        <!-- FEATURE FILMS -->
+        <!-- MOVIES PORTFOLIO -->
         <section id="features">
-            <h2 class="section-title"><i class="fas fa-film"></i> Feature Films</h2>
+            <h2 class="section-heading"><i class="fas fa-film"></i> Cinematic Feature Filmography</h2>
             <div class="portfolio-grid">
                 
-                <div class="showcase-card">
-                    <div class="card-img-wrapper">
-                        <span class="badge">Streaming Now</span>
-                        <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=600" class="card-img" alt="Gadera">
+                <div class="portfolio-card">
+                    <div class="card-cover-wrap">
+                        <span class="ribbon">On Zee5</span>
+                        <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=500" class="card-cover" alt="Gadera Cover">
                     </div>
-                    <div class="card-content">
-                        <div class="card-role">1st Assistant Director & Assistant Writer</div>
+                    <div class="card-body">
+                        <span class="card-tag">1st Assistant Director & Assistant Writer</span>
                         <h3 class="card-title">GADERA</h3>
-                        <p class="card-desc">Produced by Jet Films & Wild Auteur Films. An immersive feature production tracking compelling historical narratives.</p>
-                        <a href="https://www.zee5.com/" target="_blank" class="card-btn"><i class="fas fa-play"></i> Stream on ZEE5</a>
+                        <p class="card-text">Produced by Jet Films and Wild Auteur Films. A critically tracked period landscape project.</p>
+                        <a href="https://www.zee5.com/" target="_blank" class="action-link"><i class="fas fa-play"></i> View Project on ZEE5</a>
                     </div>
                 </div>
 
-                <div class="showcase-card">
-                    <div class="card-img-wrapper">
-                        <span class="badge" style="background:#b45309;">Post Production</span>
-                        <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=600" class="card-img" alt="Safed">
+                <div class="portfolio-card">
+                    <div class="card-cover-wrap">
+                        <span class="ribbon" style="background:#4b5563; color:#fff;">Post-Production</span>
+                        <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=500" class="card-cover" alt="Safed Cover">
                     </div>
-                    <div class="card-content">
-                        <div class="card-role">1st Assistant Director</div>
+                    <div class="card-body">
+                        <span class="card-tag">1st Assistant Director</span>
                         <h3 class="card-title">Safed</h3>
-                        <p class="card-desc">Executed core logistical layouts and shot structures during peak creative production cycles.</p>
+                        <p class="card-text">Coordinated tracking timelines and artistic unit management during high-level post schedules.</p>
                     </div>
                 </div>
 
-                <div class="showcase-card">
-                    <div class="card-img-wrapper">
-                        <span class="badge" style="background:#b45309;">Post Production</span>
-                        <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=600" class="card-img" alt="Pinecone">
+                <div class="portfolio-card">
+                    <div class="card-cover-wrap">
+                        <span class="ribbon" style="background:#4b5563; color:#fff;">Post-Production</span>
+                        <img src="https://images.unsplash.com/photo-1478720568477-152d9b164e26?q=80&w=500" class="card-cover" alt="Pinecone Cover">
                     </div>
-                    <div class="card-content">
-                        <div class="card-role">Assistant Director</div>
+                    <div class="card-body">
+                        <span class="card-tag">Assistant Director</span>
                         <h3 class="card-title">Pinecone</h3>
-                        <p class="card-desc">Assisted directorial tracking units across challenging aesthetic frameworks.</p>
+                        <p class="card-text">Managed on-set operations and secondary configuration maps for this upcoming narrative piece.</p>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- WRITER & DIRECTOR SPOTLIGHT -->
+        <!-- WRITER & DIRECTOR SHORTS -->
         <section id="independent">
-            <h2 class="section-title"><i class="fas fa-video"></i> Directed & Penned Works</h2>
+            <h2 class="section-heading"><i class="fas fa-video"></i> Directed & Written Short Format Properties</h2>
             <div class="portfolio-grid">
 
-                <div class="showcase-card">
-                    <div class="card-img-wrapper">
-                        <span class="badge" style="background:#047857;">Festival Entry</span>
-                        <img src="https://images.unsplash.com/photo-1509281373149-e957c6296406?q=80&w=600" class="card-img" alt="Playback Project">
+                <div class="portfolio-card">
+                    <div class="card-cover-wrap">
+                        <span class="ribbon" style="background:#10b981; color:#fff;">IDSFFK 2025</span>
+                        <img src="https://images.unsplash.com/photo-1509281373149-e957c6296406?q=80&w=500" class="card-cover" alt="IDSFFK Selection">
                     </div>
-                    <div class="card-content">
-                        <div class="card-role">Writer & Director</div>
+                    <div class="card-body">
+                        <span class="card-tag">Writer & Director</span>
                         <h3 class="card-title">Baithi Hai (Playback Project)</h3>
-                        <p class="card-desc">Officially selected for screening at the prestigious International Documentary and Short Film Festival of Kerala (IDSFFK), 2025.</p>
-                        <a href="https://idsffk.in/" target="_blank" class="card-btn"><i class="fas fa-external-link-alt"></i> View IDSFFK Festival</a>
+                        <p class="card-text">Officially selected and scheduled for exhibition at the International Documentary and Short Film Festival of Kerala (IDSFFK), 2025.</p>
+                        <a href="https://idsffk.in/" target="_blank" class="action-link"><i class="fas fa-link"></i> Launch IDSFFK Website</a>
                     </div>
                 </div>
 
-                <div class="showcase-card">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=600" class="card-img" alt="OTT Projects">
+                <div class="portfolio-card">
+                    <div class="card-cover-wrap">
+                        <img src="https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=500" class="card-cover" alt="OTT Cover">
                     </div>
-                    <div class="card-content">
-                        <div class="card-role">Scriptwriter</div>
+                    <div class="card-body">
+                        <span class="card-tag">OTT Scriptwriter</span>
                         <h3 class="card-title">Bakri Ki Bala & Shanu Ka Videshi Sapna</h3>
-                        <p class="card-desc">Drafted original narrative assets for prominent local OTT giants including Stage Originals and Chaupal OTT.</p>
-                        <a href="https://chaupal.tv/" target="_blank" class="card-btn"><i class="fas fa-tv"></i> Chaupal OTT</a>
+                        <p class="card-text">Penned highly anticipated comedic and regional content pieces for Stage Originals and Chaupal OTT platforms.</p>
+                        <a href="https://chaupal.tv/" target="_blank" class="action-link"><i class="fas fa-tv"></i> Go to Chaupal OTT</a>
                     </div>
                 </div>
 
-                <div class="showcase-card">
-                    <div class="card-img-wrapper">
-                        <img src="https://images.unsplash.com/photo-1542204172-e7052809a86f?q=80&w=600" class="card-img" alt="Guardian of the green">
+                <div class="portfolio-card">
+                    <div class="card-cover-wrap">
+                        <img src="https://images.unsplash.com/photo-1542204172-e7052809a86f?q=80&w=500" class="card-cover" alt="Documentary Cover">
                     </div>
-                    <div class="card-content">
-                        <div class="card-role">Documentary Director</div>
+                    <div class="card-body">
+                        <span class="card-tag">Documentary Filmmaker</span>
                         <h3 class="card-title">Guardian of the Green</h3>
-                        <p class="card-desc">A deep-dive biographical short tracking the eco-crusade of Devender Sura, the renowned 'Tree Man of Haryana'.</p>
+                        <p class="card-text">An impactful environmental biographical documentary on Devender Sura, popularly recognized as the Tree Man of Haryana.</p>
                     </div>
                 </div>
 
             </div>
         </section>
 
-        <!-- TIMELINE INDUSTRY EXPERIENCE -->
+        <!-- HIGH PROFILE EXPERIENCE -->
         <section id="experience">
-            <h2 class="section-title"><i class="fas fa-clapperboard"></i> High-Profile Collaborations</h2>
-            <div class="timeline">
+            <h2 class="section-heading"><i class="fas fa-briefcase"></i> Professional Field Experience</h2>
+            <div class="experience-stack">
                 
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div class="company-name">Director's Assistant — Sandeep Singh Productions</div>
-                        <span class="timeline-date">Feature Films</span>
+                <div class="experience-node">
+                    <div class="node-top">
+                        <div class="node-title">Director's Assistant — Sandeep Singh Productions</div>
+                        <span class="node-date">Feature Films</span>
                     </div>
-                    <p class="card-desc">Directly assisted behind-the-scenes strategy for high-caliber features: <strong>Swatantr Veer Savarkar</strong> (Dir. Randeep Hooda) and <strong>Main Atal Hoon</strong> (Dir. Ravi Jadhav).</p>
+                    <p class="card-text">Directly assisted behind-the-scenes workflows for high-caliber Bollywood films: <strong>Swatantr Veer Savarkar</strong> directed by Randeep Hooda and <strong>Main Atal Hoon</strong> directed by Ravi Jadhav.</p>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div class="company-name">Assistant Writer — Aman Jeffery & Muazzam Beg</div>
-                        <span class="timeline-date">1 Year Tenure</span>
+                <div class="experience-node">
+                    <div class="node-top">
+                        <div class="node-title">Assistant Writer — Aman Jeffery & Muazzam Beg</div>
+                        <span class="node-date">Project Properties</span>
                     </div>
-                    <p class="card-desc">Collaborated on long-form creative properties including upcoming project "Loudspeaker" slated to be produced by legendary actor <strong>Manoj Bajpayee</strong>.</p>
+                    <p class="card-text">Contributed structural script tracking for varied commercial long-form assets including "Loudspeaker" produced by veteran actor <strong>Manoj Bajpayee</strong>.</p>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div class="company-name">Creative Writer & 1st AD — Brand Invincible</div>
-                        <span class="timeline-date">Commercial Campaigns</span>
+                <div class="experience-node">
+                    <div class="node-top">
+                        <div class="node-title">Creative Writer & 1st AD — Brand Invincible Agency</div>
+                        <span class="node-date">Ad Campaigns</span>
                     </div>
-                    <p class="card-desc">Managed and constructed advertising sets and script elements alongside Director Peeush Tomar.</p>
-                    <a href="https://youtube.com/@brandsinvincible7864?si=R3OEnD64v2X9hdfl" target="_blank" class="card-btn" style="margin-top:12px; display:inline-flex;"><i class="fab fa-youtube"></i> Open Brand Agency Channel</a>
+                    <p class="card-text">Drafted high-concept digital campaigns and managed set scheduling layouts alongside agency director Peeush Tomar.</p>
+                    <a href="https://youtube.com/@brandsinvincible7864?si=R3OEnD64v2X9hdfl" target="_blank" class="action-link" style="display:inline-block; max-width: 250px; margin-top: 10px;"><i class="fab fa-youtube"></i> Visit Brand Channel</a>
                 </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div class="company-name">Advertising Specialist — Shree Ganpati Productions & Satra Films</div>
-                        <span class="timeline-date">1200+ Animated Ads</span>
+                <div class="experience-node">
+                    <div class="node-top">
+                        <div class="node-title">Commercial 1st AD — Shree Ganpati Productions & Satra Films</div>
+                        <span class="node-date">1200+ Video Ads</span>
                     </div>
-                    <p class="card-desc">Helmed first assistant workflows for tier-1 national properties involving Amitabh Bachchan (Madhusudan Diary), Yuvraj Singh, and marquee brands like Britannia and Vivo.</p>
+                    <p class="card-text">Helmed 1st AD duties across major corporate campaigns involving legendary profiles like Amitabh Bachchan (Madhusudan Diary), Yuvraj Singh, and Vivo smartphones.</p>
                 </div>
 
             </div>
         </section>
 
-        <!-- EDUCATION -->
+        <!-- ACADEMIC FOUNDATION -->
         <section id="education">
-            <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Academic Foundation</h2>
-            <div class="timeline">
-                <div class="timeline-item" style="border-left-color: #6b7280;">
-                    <div class="timeline-header">
-                        <div class="company-name">Bachelor in Cinema (Film Direction)</div>
-                        <span class="timeline-date">2018 - 2024</span>
-                    </div>
-                    <p style="color:var(--accent); font-weight:600;">State Institute of Film and Television, Rohtak</p>
-                </div>
+            <h2 class="section-heading"><i class="fas fa-graduation-cap"></i> Academic Training</h2>
+            <div class="edu-item">
+                <h3 style="font-size: 1.2rem; margin-bottom: 5px;">Bachelor in Cinema (Specialization in Film Direction)</h3>
+                <p style="color: var(--accent-gold); font-weight: 600; font-size: 0.95rem; margin-bottom: 5px;">State Institute of Film and Television, Rohtak</p>
+                <p style="color: var(--text-soothing); font-size: 0.9rem;">Batch Timeline: 2018 - 2024</p>
             </div>
         </section>
 
     </div>
 
-    <footer style="text-align: center; padding: 40px; border-top: 1px solid rgba(255,255,255,0.05); color: var(--text-muted); font-size:0.9rem;">
-        <p>&copy; 2026 Raunak Sanger. Public Cinema Portfolio.</p>
+    <footer>
+        <p>&copy; 2026 Raunak Sanger. All Content Verified Public Portfolio.</p>
     </footer>
 
 </body>
