@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raunak Sanger | Writer & Director Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <style>
+        :root {
+            --bg-color: #0d0f12;
+            --card-bg: #161a22;
+            --accent-color: #00bcd4;
+            --text-color: #f0f3f6;
+            --text-muted: #8b949e;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(rgba(0,0,0,0.7), var(--bg-color)), url('https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1200') no-repeat center/cover;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 2px solid #21262d;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--accent-color);
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        h1 { font-size: 2.5rem; margin-bottom: 5px; letter-spacing: 1px; }
+        .subtitle { color: var(--accent-color); font-size: 1.2rem; font-weight: 600; margin-bottom: 15px; }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+        .contact-info a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact-info a:hover { color: var(--accent-color); }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #30363d;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 188, 212, 0.2);
+        }
+
+        .card h3 { color: var(--text-color); margin-bottom: 10px; }
+        .card .meta { color: var(--accent-color); font-size: 0.85rem; font-weight: bold; margin-bottom: 10px; text-transform: uppercase; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: #000;
+            padding: 8px 16px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 15px;
+            font-size: 0.85rem;
+            transition: background 0.3s;
+        }
+        .btn:hover { background-color: #008ba3; color: #fff; }
+
+        ul.edu-list { list-style: none; }
+        ul.edu-list li {
+            background-color: var(--card-bg);
+            padding: 15px 20px;
+            margin-bottom: 10px;
+            border-radius: 6px;
+            border-left: 3px solid var(--text-muted);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: var(--text-muted);
+            border-top: 1px solid #30363d;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <!-- Replace with your actual circular image link if hosted online -->
+        <img src="https://i.imgur.com/your-image-placeholder.jpg" alt="Raunak Sanger" class="profile-img">
+        <h1>Raunak Sanger</h1>
+        <p class="subtitle">Writer & Director</p>
+        <div class="contact-info">
+            <a href="mailto:raunaksanger1999@gmail.com"><i class="fas fa-envelope"></i> raunaksanger1999@gmail.com</a>
+            <a href="tel:+917007272067"><i class="fas fa-phone"></i> +91 7007272067</a>
+        </div>
+    </header>
+
+    <div class="container">
+
+        <!-- MOVIES SECTION -->
+        <section id="movies">
+            <h2>Feature Movies</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="meta">1st Assistant Director & Assistant Writer</span>
+                    <h3>GADERA</h3>
+                    <p>Produced by Jet Films And Wild Auteur Films. Explore the historical narrative.</p>
+                    <a href="https://www.zee5.com/" target="_blank" class="btn"><i class="fas fa-play"></i> Watch on ZEE5</a>
+                </div>
+                <div class="card">
+                    <span class="meta">Post Production</span>
+                    <h3>Safed</h3>
+                    <p>Assisted on the creative layout and operational direction of the upcoming feature film.</p>
+                </div>
+                <div class="card">
+                    <span class="meta">Post Production</span>
+                    <h3>Pinecone</h3>
+                    <p>Contributed to the primary direction unit for this highly anticipated project.</p>
+                </div>
+                <div class="card">
+                    <span class="meta">Director's Assistant</span>
+                    <h3>Swatantr Veer Savarkar & Main Atal Hoon</h3>
+                    <p>Assisted prominent directors Randeep Hooda and Ravi Jadhav under producer Sandeep Singh.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- WRITER & DIRECTOR SHORTS -->
+        <section id="projects">
+            <h2>Independent Projects (Writer & Director)</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Desh mera rangerez...ye babu</h3>
+                    <span class="meta">Runtime: 25 Mins</span>
+                </div>
+                <div class="card">
+                    <h3>Playback project (Song: Baithi Hai)</h3>
+                    <span class="meta">Official Selection</span>
+                    <p>Selected in International Documentary and Short Film Festival of Kerala (IDSFFK), 2025.</p>
+                    <a href="https://idsffk.in/" target="_blank" class="btn"><i class="fas fa-external-link-alt"></i> IDSFFK Kerala</a>
+                </div>
+                <div class="card">
+                    <h3>Guardian of the Green</h3>
+                    <span class="meta">Documentary</span>
+                    <p>A profound look at the life and contributions of Devender Sura, the 'Tree Man of Haryana'.</p>
+                </div>
+                <div class="card">
+                    <h3>OTT Scripting (Stage Originals & Chaupal)</h3>
+                    <span class="meta">Writer</span>
+                    <p>Wrote "Shanu ka videshi sapna" (Stage Originals) and currently writing "Bakri ki bala" (Chaupal OTT).</p>
+                    <a href="https://chaupal.tv/" target="_blank" class="btn"><i class="fas fa-tv"></i> Chaupal OTT</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- VERTICAL SERIES & ADVERTISING -->
+        <section id="commercials">
+            <h2>Series & Advertising</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="meta">Associate Director</span>
+                    <h3>Shoorveer Ki Wapsi</h3>
+                    <p>Audio/Vertical series produced by Drunkenn Gurus Productions for Kuku FM.</p>
+                    <a href="https://kukufm.com/" target="_blank" class="btn">Listen on Kuku FM</a>
+                </div>
+                <div class="card">
+                    <span class="meta">Creative Writer & 1st AD</span>
+                    <h3>Brands Invincible</h3>
+                    <p>Directed and penned creative campaigns headed by Peeush Tomar.</p>
+                    <a href="https://youtube.com/@brandsinvincible7864?si=R3OEnD64v2X9hdfl" target="_blank" class="btn"><i class="fab fa-youtube"></i> View YouTube Channel</a>
+                </div>
+                <div class="card">
+                    <span class="meta">1st Assistant Director</span>
+                    <h3>Satra Productions</h3>
+                    <p>Written over 1200 digital animated ad films for major brands including Britannia, Plaza Cables, and Hathaway.</p>
+                </div>
+                <div class="card">
+                    <span class="meta">Commercial AD Experience</span>
+                    <h3>Flyking Entertainment & Shree Ganpati Productions</h3>
+                    <p>Worked on campaigns featuring Amitabh Bachchan (Madhusudan Diary), Yuvraj Singh (Ace Publishing), and Vivo ads.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION -->
+        <section id="education">
+            <h2>Education</h2>
+            <ul class="edu-list">
+                <li>
+                    <strong>Graduation (Bachelor in Cinema - Film Direction)</strong> — 2018-2024<br>
+                    <span style="color: var(--accent-color)">State Institute of Film and Television, Rohtak</span>
+                </li>
+                <li>
+                    <strong>12th (CBSE)</strong> — 2017<br>
+                    Central Hindu School, Banaras Hindu University
+                </li>
+                <li>
+                    <strong>10th (ICSE)</strong> — 2015<br>
+                    Don Bosco Academy
+                </li>
+            </ul>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Raunak Sanger. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
